@@ -1,0 +1,265 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    animation-name: in;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+}
+
+.nav{
+    position: relative;
+    top: 0;
+    width: 96.9%;
+    background-color: white;
+    right: 0;
+    padding: 20px;
+}
+
+nav{
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+
+nav a{
+    text-align: center;
+    align-content: center;
+    right: 0;
+    text-decoration: none;
+    color: black;
+    font-family: teko;
+    font-size: 25px;
+    transition: 0.4s;
+}
+
+nav a:hover{
+    scale: 110%;
+    border-bottom: 1px solid black;
+}
+
+.logotipo{
+    position: relative;
+    left: 30px;
+    font-size: 24px;
+    margin-right: 120px;
+    align-content: center;
+}
+
+.login-btn{
+    top: 50%;
+    position: relative;
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(11, 56, 100);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.login-btn:hover{
+    background-color: rgb(14, 14, 29);
+    color: white;
+    scale: 110%;
+}
+
+.menu{
+    position: relative;
+    border:1px solid black;
+    width: 99.88%;
+    background-image: linear-gradient(45deg, rgb(7, 9, 17) 30%, rgb(123, 168, 212), white);
+    color: white;
+    height: 360px;
+}
+
+.menu h1{
+    font-family: teko;
+    font-size: 70px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.menu p.subtitle{
+    position: relative;
+    font-size: 30px;
+    margin-left: 30px;
+    width: 800px;
+    margin-bottom: 50px;
+}
+
+button.iniciar{
+    position: relative;
+    left: 100px;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color:rgb(58, 115, 172);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button.iniciar:hover{
+    background-color: rgb(14, 14, 29);
+    color: white;
+    scale: 110%;
+}
+
+.card{
+    position: absolute;
+    scale: 0.8;
+    right: -10px;
+    top: -20px;
+    height: 340px;
+    color: black;
+    border: 1px solid black;
+    padding: 30px;
+    width: 500px;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: -10px 10px 10px 0.1px rgb(37, 37, 37);
+    animation-name: effect;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    overflow: scroll;
+}
+
+.card::-webkit-scrollbar{
+    width: 0px;
+}
+
+.card h2{
+    font-size: 29px;
+    font-family: abel;
+}
+
+.text1{
+    margin-bottom: 40px;
+}
+.text2{
+    margin-bottom: 40px;
+}
+.text3{
+    margin-bottom: 40px;
+}
+
+@keyframes in {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+@keyframes effect {
+    0% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-20px);
+      opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+  }
+
+  ul{
+    display: flex;
+    list-style-type: none;
+    width: 99.88%;
+  }
+
+  ul a{
+    width: 34%;
+    border: 1px solid black;
+    height: 163px;
+    text-align: center;
+    align-content: center;
+    font-size: 30px;
+    font-family: Playwrite Austrália SA;
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+ul a:hover{
+    font-size: 35px;
+}
+
+ul a:hover li #icon2{
+    animation-name: rotate;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+ul a:hover li #icon3{
+    animation-name: move;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#icon1{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: rgb(14, 14, 29);
+    color: white;
+}
+
+#icon2{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: rgb(14, 14, 29);
+    color: white;
+}
+
+#icon3{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: rgb(14, 14, 29);
+    color: white;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move {
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(3px);
+    }
+    80%{
+        transform: translateX(-3px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
