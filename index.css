@@ -3,14 +3,18 @@
     margin: 0;
 }
 
+:root{
+    --cortema: rgb(50, 173, 71);
+}
+
 body{
     animation-name: in;
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
     animation-delay: 0.2s;
     animation-iteration-count: 1;
-    /* background-image: linear-gradient(45deg, rgb(7, 9, 17) 30%, rgb(123, 168, 212), white); */
-
+    background-image: linear-gradient(45deg, rgb(14, 13, 13) 30%, var(--cortema), white);
+    height: 250vh;
 }
 
 .nav{
@@ -20,6 +24,8 @@ body{
     background-color: white;
     right: 0;
     padding: 20px;
+    z-index: 1;
+    
 }
 
 nav{
@@ -37,22 +43,13 @@ nav a{
     color: black;
     font-family: teko;
     font-size: 23px;
-    transition: 0.4s;
+    transition: 0.4s;   border: 1px solid black;
+    padding: 3px;
 }
 
-nav a::after{
-    content: "";
-    background-color: black;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    transition: 0.3s;
-}
 
-nav a:hover::after{
-    width: 100%;
+#contact{
+    margin-right: 200px;
 }
 
 .logotipo{
@@ -63,13 +60,21 @@ nav a:hover::after{
     align-content: center;
 }
 
+.logotipo i{
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+    color: var(--cortema);
+    scale: 1.2;
+}
+
 .login-btn{
     top: 50%;
     position: relative;
     width: 140px;
     height: 40px;
     border-radius: 20px;
-    background-color: rgb(11, 56, 100);
+    background-color: var(--cortema);
     color: white;
     border: none;
     cursor: pointer;
@@ -87,8 +92,7 @@ nav a:hover::after{
     border-top:1px solid black;
     width: 99.97%;
     color: white;
-    height: 86.6vh;
-    background-image: linear-gradient(45deg, rgb(7, 9, 17) 30%, rgb(123, 168, 212), white);
+    background: transparent;
 
 }
 
@@ -98,6 +102,8 @@ nav a:hover::after{
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 30px;
+    width: 850px;
+    /* border: 1px solid black; */
 }
 
 .menu p.subtitle{
@@ -115,21 +121,22 @@ button.iniciar{
     height: 40px;
     border-radius: 20px;
     border: none;
-    background-color:rgb(58, 115, 172);
+    background-color: black;
+    color: white;
     cursor: pointer;
     transition: 0.4s;
 }
 
 button.iniciar:hover{
-    background-color: rgb(14, 14, 29);
-    color: white;
+    background-color: rgb(37, 184, 152);
+    color: rgb(0, 0, 0);
     scale: 110%;
 }
 
 .card{
     position: absolute;
     scale: 0.8;
-    right: -10px;
+    right: -30px;
     top: 20px;
     height: 340px;
     color: black;
@@ -290,9 +297,10 @@ ul a:hover li #icon3{
     position: fixed;
     bottom: 20px;
     transform: translate(-50%, 0%);
+    z-index: 1;
 }
 
-ul{
+.nav-fix ul{
     position: absolute;
     left: 50vw;
     bottom: 20px;
@@ -307,8 +315,32 @@ ul{
     height: 50px;
     overflow: hidden;
     border-radius: 50%;
-    transition: 0.6s;
     background-color: white;
+    box-sizing: content-box;
+    transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+    .nav-fix ul:hover{
+    border-radius: 20px;
+    animation-name: len;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+}
+
+@keyframes len {
+    0%{
+        width: 50px;
+    }
+    90%{
+        width:500px;
+    }
+    100%{
+        width: auto;
+        padding-right: calc(10px + 30px);
+
+    }
 }
 
 #icon1{
@@ -336,7 +368,7 @@ ul{
 }
 
 
-ul a{
+.nav-fix ul a{
     text-decoration: none;
     color: black;
     opacity: 0;
@@ -344,25 +376,21 @@ ul a{
     transition: 0.7s;
 }
 
-ul #icon-nav {
+.nav-fix ul #icon-nav {
     left: 50%;
     bottom: 17px;
     transform: translate(-24%, 0);
     position: absolute;
     scale: 2.0;
     transition: 0.3s;
-    animation-name: in;
+    animation-name: in-icon;
     animation-timing-function: ease-in;
     animation-duration: 0.4s;
     animation-iteration-count: 1;
 }
 
-ul:hover{
-    border-radius: 20px;
-    width: 550px;
-}
 
-ul:hover #icon-nav{
+.nav-fix ul:hover #icon-nav{
     animation-name: out;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
@@ -371,7 +399,7 @@ ul:hover #icon-nav{
     animation-fill-mode: forwards;
 }
 
-ul:hover a{
+.nav-fix ul:hover a{
     opacity: 1;
     pointer-events: all;
     margin-left: 28px;
@@ -390,7 +418,7 @@ ul:hover a{
     }
 }
 
-@keyframes in {
+@keyframes in-icon{
     from{
         scale: 0.5;
         opacity: 0;
@@ -401,15 +429,144 @@ ul:hover a{
     }
 }
 
-ul a:hover{
+.nav-fix ul a:hover{
     transform: translateY(-20px);
 }
 
-ul a i{
+.nav-fix ul a i{
     transition: 0.6s;
 }
 
-ul a:hover i{
+.nav-fix ul a:hover i{
     opacity: 0;
 }
 
+
+.apresentação{
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: relative;
+    top: 200px;
+    padding: 30px;
+    border: 1px solid white;
+    width:85%;
+    color: white;
+    border-radius: 30px;
+}
+
+.apresentação .apresen1 h1{
+    font-size: 40px;
+    margin-bottom: 50px
+}
+
+.apresentação .apresen1 h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.apresentação .apresen1 p{
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+.apresentação .apresen2 h1{
+    font-size: 40px;
+    margin-bottom: 50px
+}
+
+.apresentação .apresen2 h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.apresentação .apresen2 ul{
+    font-size: 19px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+.apresentação .apresen3 h1{
+    font-size: 40px;
+    margin-bottom: 50px
+}
+
+.apresentação .apresen3 h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.apresentação .apresen3 P{
+    font-size: 19px;
+}
+
+.apresentação .apresen3 ul{
+    font-size: 19px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.longs .long1{
+    top: 0px;
+    left: 360px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    width: 80px;
+    z-index: 0;
+    transition: 0.3s;
+    overflow: hidden;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+
+.longs .long2 a{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.longs .long2{
+    transition: 0.3s;
+    top: 0px;
+    left: 466px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    width: 120px;
+    z-index: 0;
+}
+.longs .long3{
+    top: 0px;
+    transition: 0.3s;
+    left:560px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    width: 110px;
+    z-index: 0;
+}
+.longs .long4{
+    left: 700px;
+    top: 0px;
+    position: absolute;
+    background-color: white;
+    transition: 0.3s;
+    padding: 10px;
+    width: 80px;
+    z-index: 0;
+}
+.longs .long5{
+    top: 0px;
+    transition: 0.3s;
+    left: 820px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    width: 80px;
+    z-index: 0;
+}
+
+.longs a{
+    position: relative;
+    margin: 3px;
+    margin-bottom: 7px;
+    text-decoration: none;
+}
