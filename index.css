@@ -23,28 +23,28 @@ body{
     width: 96.9%;
     background-color: white;
     right: 0;
-    padding: 20px;
+    padding: 15px;
     z-index: 1;
     
 }
 
 nav{
     display: flex;
-    gap: 50px;
+    gap: 30px;
     width: 100%;
 }
 
 nav a{
+    width: 300px;
     position: relative;
     text-align: center;
     align-content: center;
-    right: 0;
+    right: -100px;
     text-decoration: none;
     color: black;
     font-family: teko;
     font-size: 23px;
-    transition: 0.4s;   border: 1px solid black;
-    padding: 3px;
+    transition: 0.4s;
 }
 
 
@@ -56,8 +56,8 @@ nav a{
     position: relative;
     left: 30px;
     font-size: 24px;
-    margin-right: 120px;
     align-content: center;
+    width: 500px;
 }
 
 .logotipo i{
@@ -71,7 +71,7 @@ nav a{
 .login-btn{
     top: 50%;
     position: relative;
-    width: 140px;
+    width: 290px;
     height: 40px;
     border-radius: 20px;
     background-color: var(--cortema);
@@ -505,7 +505,7 @@ ul a:hover li #icon3{
 
 .longs .long1{
     top: 0px;
-    left: 360px;
+    left: 364px;
     position: absolute;
     background-color: white;
     padding: 10px;
@@ -520,23 +520,34 @@ ul a:hover li #icon3{
 
 .longs .long2 a{
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .longs .long2{
     transition: 0.3s;
-    top: 0px;
-    left: 466px;
+    top: -22px;
+    left: 500px;
     position: absolute;
     background-color: white;
     padding: 10px;
-    width: 120px;
+    width: 101px;
     z-index: 0;
 }
+
+.longs .long2 ul{
+    list-style-type: none;
+}
+.longs .long4 ul{
+    list-style-type: none;
+}
+.longs .long5 ul{
+    list-style-type: none;
+}
+
 .longs .long3{
-    top: 0px;
+    top: -10px;
     transition: 0.3s;
-    left:560px;
+    left:650px;
     position: absolute;
     background-color: white;
     padding: 10px;
@@ -544,8 +555,8 @@ ul a:hover li #icon3{
     z-index: 0;
 }
 .longs .long4{
-    left: 700px;
-    top: 0px;
+    left: 814px;
+    top: -10px;
     position: absolute;
     background-color: white;
     transition: 0.3s;
@@ -554,9 +565,9 @@ ul a:hover li #icon3{
     z-index: 0;
 }
 .longs .long5{
-    top: 0px;
+    top: -10px;
     transition: 0.3s;
-    left: 820px;
+    left: 970px;
     position: absolute;
     background-color: white;
     padding: 10px;
@@ -569,4 +580,78 @@ ul a:hover li #icon3{
     margin: 3px;
     margin-bottom: 7px;
     text-decoration: none;
+    color: black;
+}
+
+.longs a:hover{
+    text-decoration: underline;
+}
+
+.login{
+    position: absolute;
+    background-color: rgb(6, 6, 14);
+    color: white;
+    left: 50vw;
+    top: 50vh;
+    width: 300px;
+    padding: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.login h1{
+    margin-bottom: 40px;
+}
+
+.login input{
+    width: 100%;
+    height: 30px;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    margin-bottom: 20px;
+    background: transparent;
+}
+
+.login button{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    left: 103px;
+    border: none;
+    transition: 0.3s;
+}
+
+.login button:hover{
+    scale: 110%;
+    background-color: rgb(37, 184, 152);
+    border-radius: 20px;
+
+}
+
+.login label{
+    position: absolute;
+    left: 35px;
+    margin-top: 4px;
+    transition: 0.4s;
+}
+
+.login #label-senha{
+    position: absolute;
+    top: 147px;
+}
+
+.login #senha:focus ~ #label-senha{
+    position: absolute;
+    top: 129px;
+    font-size: 13px;
+    color: var(--cortema);
+}
+.login #email:focus ~ #label-email{
+    position: absolute;
+    margin-top: -15px;
+    font-size: 13px;
+    color: var(--cortema);
 }
