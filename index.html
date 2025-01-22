@@ -8,9 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Teko:wght@300..700&display=swap" rel="stylesheet">
-    <title>portfólio</title>
+    <title>Portfólio</title>
 </head>
+
 <body>
+
+    <video autoplay muted id="input">
+        <source src="lv_0_20250118113117.mp4" type="video/mp4">
+    </video>
 
     <section class="nav">
 
@@ -18,12 +23,12 @@
             <div class="logotipo">
                 <h1><i class='bx bxs-color'></i>RR Softwares</h1>
             </div>
-            <a id="home" href="index.html">HOME</a>
-            <a id="about" href="">ABOUT</a>
-            <a id="virtual" href = "">VIRTUAL SHOP</a>
-            <a id="language" href="">LANGUAGE</a>
-            <a id="contact" href="">CONTACT</a>
-            <button class="login-btn">LOGIN<i class='bx bxs-cart'></i></button>
+            <p id="home">HOME</p>
+            <p id="about">ABOUT</p>
+            <p id="virtual">VIRTUAL SHOP</p>
+            <p id="language">LANGUAGE</p>
+            <p id="contact" >CONTACT</p>
+            <button onclick="abrirLogin()" class="login-btn">LOGIN<i class='bx bxs-cart'></i></button>
         </nav>
 
     </section>
@@ -31,18 +36,15 @@
     <section class="longs">
     
         <div class="long1">
-            <a href="">Home page</a>
+            <a href="index.html">Home page</a>
         </div>
    
         <div class="long2">
             <ul>
-                <li> <a href="">Who we are</a></li>
-                <li> <a href="">Quality policy</a></li>
+                <li><a href="about.html">Who we are</a></li>
+                <li><a href="PoliticasPvAbout.html">Quality policy</a></li>
                 <li><a href="">Portfolios</a></li>
             </ul>
-           
-           
-         
         </div>
 
         <div class="long3">
@@ -62,7 +64,7 @@
 
         <div class="long5">
             <ul>
-                <li><a href="">Email:</a></li>
+                <li><a href="">Email</a></li>
                 <li><a href="">Whatsapp</a></li>
                 <li><a href="">Instagram</a></li>
             </ul>
@@ -75,19 +77,19 @@
     
 
     <section>
+        <dialog class="login-all">
         <div class="login">
+            <h1>Login</h1><i id="fechar-login" onclick="fecharLogin()" class='bx bx-x'></i>
             <form action="">
-                <h1>Login</h1>
-                <input type="email" id="email">
+                <input type="email" id="email" required>
                 <label id="label-email" for="email">email</label><br>
-                <input type="password" id="senha">
+                <input type="password" id="senha" required>
                 <label id="label-senha" for="senha">senha</label>
                 <button>Logar</button>
             </form>
         </div>
+        </dialog>
     </section>
-
-
 
     <section class="menu">
         <h1>Welcome to our platform</h1>
@@ -99,12 +101,12 @@
                 <h2>Innovative Solutions</h2>
                 <p>Discover customized strategies tailored to meet your unique business needs.</p>
             </div>
-
+            <br>
             <div class="text2">
                 <h2>Expert Support</h2>
             <p>Our team of professionals is here to assist you at every step of your journey.</p>
             </div>
-
+            <br>
             <div class="text3">
                 <h2>Scalable Growth</h2>
                 <p>Unlock your potential with tools designed for sustainable expansion.</p>
@@ -123,40 +125,7 @@
         </ul>
     </section>
 
-
-    <section class="apresentação">
-
-        <div class="apresen1">
-        <h1>Empowering Businesses with Innovative Software Solutions</h1>
-        <h2>Welcome to RR Softwares!</h2>
-    <p>At RR Softwares, we specialize in creating intelligent, user-friendly, and scalable software solutions that drive businesses forward. Our cutting-edge technology and tailored approach ensure your business is equipped to thrive in a rapidly evolving digital world.</p></div>
-    
-    <div class="apresen2">
-        <h2>What We Offer</h2>
-        <ul>
-            <li>Custom Software Development: From concept to deployment, we build software tailored to your unique needs.</li>
-            <li>Enterprise Solutions: Optimize your operations with robust tools designed to enhance efficiency and productivity.</li>
-            <li>Cloud-Based Services: Harness the power of the cloud for scalability, security, and seamless integration.</li>
-            <li>Mobile Applications: Engage your audience on the go with intuitive and feature-rich mobile apps.</li>
-        </ul>
-    </div>
-
-    <div class="apresen3">
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li>Expert Team: Our skilled developers and designers bring your ideas to life with precision and creativity.</li>
-            <li>Client-Centric Approach: We work closely with you to deliver solutions that align with your goals.</li>
-            <li>Innovation-Driven: We stay ahead of industry trends to provide future-ready software solutions.</li>
-        </ul>
-
-        <h2>Let’s Build the Future Together</h2>
-        <p>Ready to elevate your business with state-of-the-art software? Get in touch with us today, and let’s create something extraordinary.</p>
-
-    </div>
-    </section>
-
-
     <script src="index.js"></script>
-
+    
 </body>
 </html>
