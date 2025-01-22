@@ -4,28 +4,29 @@
 }
 
 :root{
-    --cortema: rgb(50, 173, 71);
+    --cortema: rgb(24, 80, 184);
 }
 
 body{
     animation-name: in;
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
-    animation-delay: 0.2s;
+    animation-delay: 4.3s;
     animation-iteration-count: 1;
-    background-image: linear-gradient(45deg, rgb(14, 13, 13) 30%, var(--cortema), white);
-    height: 250vh;
+    height: 100vh;
+    background-color: rgb(13, 11, 26);
 }
 
 .nav{
     position: relative;
     top: 0;
-    width: 96.9%;
+    width: 97.83%;
     background-color: white;
     right: 0;
     padding: 15px;
     z-index: 1;
-    
+    transition: 1s;
+    opacity: 0;
 }
 
 nav{
@@ -34,7 +35,7 @@ nav{
     width: 100%;
 }
 
-nav a{
+nav p{
     width: 300px;
     position: relative;
     text-align: center;
@@ -93,13 +94,14 @@ nav a{
     width: 99.97%;
     color: white;
     background: transparent;
-
+    opacity: 0;
+    transition: 1s;
 }
 
 .menu h1{
     font-family: teko;
     font-size: 70px;
-    margin-top: 20px;
+    margin-top: 80px;
     margin-left: 20px;
     margin-bottom: 30px;
     width: 850px;
@@ -139,15 +141,15 @@ button.iniciar:hover{
     right: -30px;
     top: 20px;
     height: 340px;
-    color: black;
-    border: 1px solid black;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     padding: 30px;
     width: 500px;
     font-size: 26px;
     text-align: center;
     border-radius: 30px;
-    box-shadow: -10px 10px 10px 0.1px rgb(37, 37, 37);
-    animation-name: effect;
+    box-shadow: -10px 10px 10px 0.1px rgb(76, 190, 235);
+    animation-name: effectCard;
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
     animation-delay: 1s;
@@ -175,7 +177,7 @@ button.iniciar:hover{
     }
   }
 
-@keyframes effect {
+@keyframes effectCard {
     0% {
       transform: translateY(0px);
       opacity: 1;
@@ -190,113 +192,12 @@ button.iniciar:hover{
     }
 }
 
-
-/* CONFIGURAÇÃO 1 */
-
-
-/*
-
-.text1{
-    margin-bottom: 40px;
-}
-.text2{
-    margin-bottom: 40px;
-}
-.text3{
-    margin-bottom: 40px;
-}
-  ul{
-    display: flex;
-    list-style-type: none;
-    width: 99.88%;
-  }
-
-  ul a{
-    width: 34%;
-    border: 1px solid black;
-    height: 163px;
-    text-align: center;
-    align-content: center;
-    font-size: 30px;
-    font-family: Playwrite Austrália SA;
-    color: black;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-ul a:hover{
-    font-size: 35px;
-}
-
-ul a:hover li #icon2{
-    animation-name: rotate;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
-ul a:hover li #icon3{
-    animation-name: move;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
-
-#icon1{
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 50%;
-    background-color: rgb(14, 14, 29);
-    color: white;
-}
-
-#icon2{
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 50%;
-    background-color: rgb(14, 14, 29);
-    color: white;
-}
-
-#icon3{
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 50%;
-    background-color: rgb(14, 14, 29);
-    color: white;
-}
-
-@keyframes rotate {
-    from{
-        transform: rotate(0deg);
-    }
-
-    to{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes move {
-    0%{
-        transform: translateX(0px);
-    }
-    50%{
-        transform: translateX(3px);
-    }
-    80%{
-        transform: translateX(-3px);
-    }
-    100%{
-        transform: translateX(0px);
-    }
-}
-*/
-
-/* CONFIGURAÇÃO 2 */
-
 .nav-fix{
     position: fixed;
     bottom: 20px;
     transform: translate(-50%, 0%);
+    transition: 1s;
+    opacity: 0;
     z-index: 1;
 }
 
@@ -441,66 +342,9 @@ ul a:hover li #icon3{
     opacity: 0;
 }
 
-
-.apresentação{
-    left: 50%;
-    transform: translate(-50%, 0%);
-    position: relative;
-    top: 200px;
-    padding: 30px;
-    border: 1px solid white;
-    width:85%;
-    color: white;
-    border-radius: 30px;
-}
-
-.apresentação .apresen1 h1{
-    font-size: 40px;
-    margin-bottom: 50px
-}
-
-.apresentação .apresen1 h2{
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.apresentação .apresen1 p{
-    font-size: 19px;
-    margin-bottom: 20px;
-}
-.apresentação .apresen2 h1{
-    font-size: 40px;
-    margin-bottom: 50px
-}
-
-.apresentação .apresen2 h2{
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.apresentação .apresen2 ul{
-    font-size: 19px;
-    margin-bottom: 20px;
-    margin-left: 50px;
-}
-.apresentação .apresen3 h1{
-    font-size: 40px;
-    margin-bottom: 50px
-}
-
-.apresentação .apresen3 h2{
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.apresentação .apresen3 P{
-    font-size: 19px;
-}
-
-.apresentação .apresen3 ul{
-    font-size: 19px;
-    margin-bottom: 20px;
-    margin-left: 50px;
+.longs{
+    transition: 1s;
+    opacity: 0;
 }
 
 .longs .long1{
@@ -526,7 +370,7 @@ ul a:hover li #icon3{
 .longs .long2{
     transition: 0.3s;
     top: -22px;
-    left: 500px;
+    left: 520px;
     position: absolute;
     background-color: white;
     padding: 10px;
@@ -547,7 +391,7 @@ ul a:hover li #icon3{
 .longs .long3{
     top: -10px;
     transition: 0.3s;
-    left:650px;
+    left:660px;
     position: absolute;
     background-color: white;
     padding: 10px;
@@ -588,7 +432,7 @@ ul a:hover li #icon3{
 }
 
 .login{
-    position: absolute;
+    position: fixed;
     background-color: rgb(6, 6, 14);
     color: white;
     left: 50vw;
@@ -598,7 +442,26 @@ ul a:hover li #icon3{
     transform: translate(-50%, -50%);
     border-radius: 20px;
     z-index: 1;
+    scale: 1.1;
+    animation-name: inLogin;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
+
+@keyframes inLogin{
+    0% {
+      transform: translate(-50%, 0%);
+      left: 50vw;
+      opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        left: 50vw;
+      opacity: 1;
+    }
+}
+    
 
 .login h1{
     margin-bottom: 40px;
@@ -613,6 +476,7 @@ ul a:hover li #icon3{
     border-bottom: 1px solid rgb(255, 255, 255);
     margin-bottom: 20px;
     background: transparent;
+    color: white;
 }
 
 .login button{
@@ -625,7 +489,7 @@ ul a:hover li #icon3{
 }
 
 .login button:hover{
-    scale: 110%;
+    scale: 120%;
     background-color: rgb(37, 184, 152);
     border-radius: 20px;
 
@@ -636,6 +500,8 @@ ul a:hover li #icon3{
     left: 35px;
     margin-top: 4px;
     transition: 0.4s;
+    color: white;
+    pointer-events: none;
 }
 
 .login #label-senha{
@@ -654,4 +520,42 @@ ul a:hover li #icon3{
     margin-top: -15px;
     font-size: 13px;
     color: var(--cortema);
+}
+
+.login #email:valid ~ #label-email{
+    position: absolute;
+    margin-top: -15px;
+    font-size: 13px;
+    color: var(--cortema);
+}
+
+.login #senha:valid ~ #label-senha{
+    position: absolute;
+    top: 129px;
+    font-size: 13px;
+    color: var(--cortema);
+} 
+
+.login #fechar-login{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+
+video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    object-fit: cover;
+    position: fixed;
+    transition: 0.4s;
 }
