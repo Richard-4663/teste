@@ -1,0 +1,506 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --cortema: rgb(30, 33, 165);
+}
+
+body{
+    animation-name: in;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    background-image: linear-gradient(45deg, rgb(14, 13, 13) 10%, var(--cortema), white);
+    height: 170vh;
+}
+
+.nav{
+    position: relative;
+    top: 0;
+    width: 96.9%;
+    background-color: white;
+    right: 0;
+    padding: 15px;
+    z-index: 1;
+    
+}
+
+nav{
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+nav p{
+    width: 300px;
+    position: relative;
+    text-align: center;
+    align-content: center;
+    right: -100px;
+    text-decoration: none;
+    color: black;
+    font-family: teko;
+    font-size: 23px;
+    transition: 0.4s;
+}
+
+
+#contact{
+    margin-right: 200px;
+}
+
+.logotipo{
+    position: relative;
+    left: 30px;
+    font-size: 24px;
+    align-content: center;
+    width: 500px;
+}
+
+.logotipo i{
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+    color: var(--cortema);
+    scale: 1.2;
+}
+
+.login-btn{
+    top: 50%;
+    position: relative;
+    width: 290px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--cortema);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.login-btn:hover{
+    background-color: rgb(14, 14, 29);
+    color: white;
+    scale: 110%;
+}
+.apresentação{
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: relative;
+    top: 50px;
+    padding: 30px;
+    border: 1px solid white;
+    width:85%;
+    color: white;
+    border-radius: 30px;
+}
+
+.apresentação .apresen1 h1{
+    font-size: 40px;
+    margin-bottom: 50px
+}
+
+.apresentação .apresen1 h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.apresentação .apresen1 p{
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.apresentação .apresen2 h1{
+    font-size: 40px;
+    margin-bottom: 50px
+}
+
+.apresentação .apresen2 h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.apresentação .apresen2 ul{
+    font-size: 19px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+.apresentação .apresen3 h1{
+    font-size: 40px;
+    margin-bottom: 50px
+}
+
+.apresentação .apresen3 h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.apresentação .apresen3 P{
+    font-size: 19px;
+}
+
+.apresentação .apresen3 ul{
+    font-size: 19px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+
+.nav-fix{
+    position: fixed;
+    bottom: 20px;
+    transform: translate(-50%, 0%);
+    z-index: 1;
+}
+
+.nav-fix ul{
+    position: absolute;
+    left: 50vw;
+    bottom: 20px;
+    transform: translate(-50%, 0%);
+    border: 1px solid black;
+    display: flex;
+    list-style-type: none;
+    gap: 150px;
+    text-align: center;
+    align-content: center;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+    box-sizing: content-box;
+    transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+    .nav-fix ul:hover{
+    border-radius: 20px;
+    animation-name: len;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+@keyframes len {
+    0%{
+        width: 50px;
+    }
+    90%{
+        width:500px;
+    }
+    100%{
+        width: auto;
+        padding-right: calc(10px + 30px);
+
+    }
+}
+
+#icon1{
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 50%;
+    background-color: rgb(14, 14, 29);
+    color: white;
+}
+
+#icon2{
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 50%;
+    background-color: rgb(14, 14, 29);
+    color: white;
+}
+
+#icon3{
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 50%;
+    background-color: rgb(14, 14, 29);
+    color: white;
+}
+
+
+.nav-fix ul a{
+    text-decoration: none;
+    color: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.7s;
+}
+
+.nav-fix ul #icon-nav {
+    left: 50%;
+    bottom: 17px;
+    transform: translate(-24%, 0);
+    position: absolute;
+    scale: 2.0;
+    transition: 0.3s;
+    animation-name: in-icon;
+    animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+}
+
+
+.nav-fix ul:hover #icon-nav{
+    animation-name: out;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    pointer-events: none;
+    animation-fill-mode: forwards;
+}
+
+.nav-fix ul:hover a{
+    opacity: 1;
+    pointer-events: all;
+    margin-left: 28px;
+    scale: 1.8;
+    margin-top: 18px;
+}
+
+@keyframes out {
+    from{
+        scale: 1;
+        opacity: 1;
+    }
+    to{
+        scale: 0.5;
+        opacity: 0;
+    }
+}
+
+@keyframes in-icon{
+    from{
+        scale: 0.5;
+        opacity: 0;
+    }
+    to{
+        scale: 2;
+        opacity: 1;
+    }
+}
+
+.nav-fix ul a:hover{
+    transform: translateY(-20px);
+}
+
+.nav-fix ul a i{
+    transition: 0.6s;
+}
+
+.nav-fix ul a:hover i{
+    opacity: 0;
+}
+
+.longs .long1{
+    top: 0px;
+    left: 364px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    width: 80px;
+    z-index: 0;
+    transition: 0.3s;
+    overflow: hidden;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+
+.longs .long2 a{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.longs .long2{
+    transition: 0.3s;
+    top: -22px;
+    left: 500px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    width: 101px;
+    z-index: 0;
+}
+
+.longs .long2 ul{
+    list-style-type: none;
+}
+.longs .long4 ul{
+    list-style-type: none;
+}
+.longs .long5 ul{
+    list-style-type: none;
+}
+
+.longs .long3{
+    top: -10px;
+    transition: 0.3s;
+    left:660px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    width: 110px;
+    z-index: 0;
+}
+.longs .long4{
+    left: 814px;
+    top: -10px;
+    position: absolute;
+    background-color: white;
+    transition: 0.3s;
+    padding: 10px;
+    width: 80px;
+    z-index: 0;
+}
+.longs .long5{
+    top: -10px;
+    transition: 0.3s;
+    left: 970px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    width: 80px;
+    z-index: 0;
+}
+
+.longs a{
+    position: relative;
+    margin: 3px;
+    margin-bottom: 7px;
+    text-decoration: none;
+    color: black;
+}
+
+.longs a:hover{
+    text-decoration: underline;
+}
+
+.login{
+    position: fixed;
+    background-color: rgb(6, 6, 14);
+    color: white;
+    left: 50vw;
+    top: 50vh;
+    width: 300px;
+    padding: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    z-index: 1;
+    scale: 1.1;
+    animation-name: inLogin;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes inLogin{
+    0% {
+      transform: translate(-50%, 0%);
+      left: 50vw;
+      opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        left: 50vw;
+      opacity: 1;
+    }
+}
+    
+
+.login h1{
+    margin-bottom: 40px;
+}
+
+.login input{
+    width: 100%;
+    height: 30px;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    margin-bottom: 20px;
+    background: transparent;
+    color: white;
+}
+
+.login button{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    left: 103px;
+    border: none;
+    transition: 0.3s;
+}
+
+.login button:hover{
+    scale: 120%;
+    background-color: rgb(37, 184, 152);
+    border-radius: 20px;
+
+}
+
+.login label{
+    position: absolute;
+    left: 35px;
+    margin-top: 4px;
+    transition: 0.4s;
+    color: white;
+    pointer-events: none;
+}
+
+.login #label-senha{
+    position: absolute;
+    top: 147px;
+}
+
+.login #senha:focus ~ #label-senha{
+    position: absolute;
+    top: 129px;
+    font-size: 13px;
+    color: var(--cortema);
+}
+.login #email:focus ~ #label-email{
+    position: absolute;
+    margin-top: -15px;
+    font-size: 13px;
+    color: var(--cortema);
+}
+
+.login #email:valid ~ #label-email{
+    position: absolute;
+    margin-top: -15px;
+    font-size: 13px;
+    color: var(--cortema);
+}
+
+.login #senha:valid ~ #label-senha{
+    position: absolute;
+    top: 129px;
+    font-size: 13px;
+    color: var(--cortema);
+} 
+
+.login #fechar-login{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@keyframes in {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
