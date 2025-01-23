@@ -9,138 +9,83 @@ const long3 = document.getElementsByClassName("long3")[0];
 const long4 = document.getElementsByClassName("long4")[0];
 const long5 = document.getElementsByClassName("long5")[0];
 
-
-home.addEventListener("mouseover", () => {
-        long1.style.top = "60px"; 
-    long1.style.zIndex = "1"; 
-});
-
-long1.addEventListener("mouseover", () => {
-    long1.style.top = "60px"; 
-    long1.style.zIndex = "1";
-});
-
-
-long1.addEventListener("mouseout", () => {
-        long1.style.top = "-10px"; 
-         long1.style.zIndex = "0";
-});
-
-home.addEventListener("mouseout", () => {
-    setTimeout(() => {
-        long1.style.top = "-10px"; 
-    long1.style.zIndex = "0";
-    }, 400);
-    
-});
-
-
-about.addEventListener("mouseover", () => {
-    long2.style.top = "60px"; 
-    long2.style.zIndex = "1";
-});
-
-long2.addEventListener("mouseover", () => {
-    long2.style.top = "60px"; 
-    long2.style.zIndex = "1";
-});
-
-
-long2.addEventListener("mouseout", () => {
-    long2.style.top = "-22px"; 
-    long2.style.zIndex = "0";
-});
-
-about.addEventListener("mouseout", () => {
-    setTimeout(() => {
-        long2.style.top = "-22px"; 
-    long2.style.zIndex = "0";
-    }, 400);
-});
-
-
-shop.addEventListener("mouseover", () => {
-    long3.style.top = "60px"; 
-    long3.style.zIndex = "1";
-});
-
-long3.addEventListener("mouseover", () => {
-    long3.style.top = "60px"; 
-    long3.style.zIndex = "1";
-});
-
-
-long3.addEventListener("mouseout", () => {
-    long3.style.top = "-10px"; 
-    long3.style.zIndex = "0";
-});
-
-shop.addEventListener("mouseout", () => {
-    setTimeout(() => {
-        long3.style.top = "-10px"; 
-    long3.style.zIndex = "0";
-    }, 400);
-});
-
-
-language.addEventListener("mouseover", () => {
-    long4.style.top = "60px"; 
-    long4.style.zIndex = "1";
-});
-
-long4.addEventListener("mouseover", () => {
-    long4.style.top = "60px"; 
-    long4.style.zIndex = "1";
-});
-
-
-long4.addEventListener("mouseout", () => {
-    long4.style.top = "-10px"; 
-    long4.style.zIndex = "0";
-});
-
-language.addEventListener("mouseout", () => {
-    setTimeout(() => {
-        long4.style.top = "-10px"; 
-    long4.style.zIndex = "0";
-    }, 400);
-});
-
-
-contact.addEventListener("mouseover", () => {
-    long5.style.top = "60px"; 
-    long5.style.zIndex = "1";
-});
-
-long5.addEventListener("mouseover", () => {
-    long5.style.top = "60px"; 
-    long5.style.zIndex = "1";
-});
-
-
-long5.addEventListener("mouseout", () => {
-    long5.style.top = "-10px"; 
-    long5.style.zIndex = "0";
-});
-
-contact.addEventListener("mouseout", () => {
-    setTimeout(() => {
-        long5.style.top = "-10px"; 
-    long5.style.zIndex = "0";
-    }, 400);
-});
-
-function abrirLogin(){
-    const login = document.getElementsByClassName("login-all")[0];
-
-    login.show();
+function showMenu(menuItem) {
+  menuItem.style.display = "block";
 }
 
-function fecharLogin(){
-    const login = document.getElementsByClassName("login-all")[0];
-    
-        login.close();
+function hideMenu(menuItem) {
+    menuItem.style.display = "none";
 }
+
+home.addEventListener("mouseover", () =>
+     showMenu(long1));
+home.addEventListener("mouseout", () =>
+     hideMenu(long1));
+
+long1.addEventListener("mouseover", () =>
+    showMenu(long1));
+long1.addEventListener("mouseout", () =>
+    hideMenu(long1));
+
+
+about.addEventListener("mouseover", () => 
+    showMenu(long2));
+about.addEventListener("mouseout", () => 
+    hideMenu(long2));
+
+long2.addEventListener("mouseover", () =>
+    showMenu(long2));
+long2.addEventListener("mouseout", () =>
+    hideMenu(long2));
+
+
+shop.addEventListener("mouseover", () => 
+    showMenu(long3));
+shop.addEventListener("mouseout", () => 
+    hideMenu(long3));
+long3.addEventListener("mouseover", () =>
+    showMenu(long3));
+long3.addEventListener("mouseout", () =>
+    hideMenu(long3));
+
+
+language.addEventListener("mouseover", () => 
+    showMenu(long4));
+language.addEventListener("mouseout", () => 
+    hideMenu(long4));
+
+long4.addEventListener("mouseover", () =>
+    showMenu(long4));
+long4.addEventListener("mouseout", () =>
+    hideMenu(long4));
+
+contact.addEventListener("mouseover", () => 
+    showMenu(long5));
+contact.addEventListener("mouseout", () => 
+    hideMenu(long5));
+
+long5.addEventListener("mouseover", () =>
+    showMenu(long5));
+long5.addEventListener("mouseout", () =>
+    hideMenu(long5));
+
+
+
+
+function abrirLogin() {
+  const login = document.getElementsByClassName("login-all")[0];
+
+  login.show();
+
+}
+
+function fecharLogin() {
+  const login = document.getElementsByClassName("login-all")[0];
+
+  login.close();
+
+}
+
 
 const video = document.getElementById("input");
 const nav = document.getElementsByClassName("nav")[0];
