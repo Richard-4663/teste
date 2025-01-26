@@ -5,6 +5,8 @@
 
 :root{
     --cortema: rgb(24, 80, 184);
+    --neon: rgb(76, 190, 235);
+    --black: black;
 }
 
 body{
@@ -15,6 +17,8 @@ body{
     animation-iteration-count: 1;
     height: 100vh;
     background-color: rgb(13, 11, 26);
+    /* background-image: linear-gradient(ellipse to bottom, ,rgb(13, 11, 26) 100% ); */
+    overflow: hidden;
 }
 
 .nav{
@@ -42,7 +46,7 @@ nav p{
     align-content: center;
     right: -100px;
     text-decoration: none;
-    color: black;
+    color: var(--black);
     font-family: teko;
     font-size: 23px;
     transition: 0.4s;
@@ -69,28 +73,9 @@ nav p{
     scale: 1.2;
 }
 
-.login-btn{
-    top: 50%;
-    position: relative;
-    width: 290px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: var(--cortema);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-.login-btn:hover{
-    background-color: rgb(14, 14, 29);
-    color: white;
-    scale: 110%;
-}
-
 .menu{
     position: relative;
-    border-top:1px solid black;
+    border-top:1px solid var(--var(--black));
     width: 99.97%;
     color: white;
     background: transparent;
@@ -99,13 +84,67 @@ nav p{
 }
 
 .menu h1{
+    position: relative;
     font-family: teko;
     font-size: 70px;
     margin-top: 80px;
     margin-left: 20px;
     margin-bottom: 30px;
     width: 850px;
-    /* border: 1px solid black; */
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.menu h1::before{
+    content: "";
+    background-color: var(--neon);
+    width: 110%;
+    height: 10px;
+    position: absolute;
+    bottom: 30%;
+    left: -4%;
+    z-index: -1;
+    box-shadow: 0px 0px 20px var(--neon);
+    animation-name: menuAnim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes menuAnim {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes ButtonAnim {
+    0%{
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.menu h1::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(13, 11, 26);
+    overflow: hidden;
+    border-radius: inherit;
+    inset: 3px;
+    z-index: -1;
 }
 
 .menu p.subtitle{
@@ -123,23 +162,62 @@ button.iniciar{
     height: 40px;
     border-radius: 20px;
     border: none;
-    background-color: black;
+    background-color: rgb(104, 104, 104);
     color: white;
     cursor: pointer;
     transition: 0.4s;
+    overflow: hidden;
+}
+
+button.iniciar::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 110%;
+    background-color: black;
+    left: -12px;
+    top: 20px;
+    z-index: -2;
+    opacity: 0;
+}
+
+button.iniciar::after{
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    inset: 2px;
+    background-color: var(--neon);
+    z-index: -1;
+    transition: 0.3s;
+    opacity: 0;
 }
 
 button.iniciar:hover{
-    background-color: rgb(37, 184, 152);
-    color: rgb(0, 0, 0);
+    background-color: var(--neon);
+    box-shadow: 0px 0px 10px var(--neon);
+    color: var(--black);
     scale: 110%;
 }
+
+button.iniciar:hover::before{
+    animation-name: ButtonAnim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+button.iniciar:hover::after{
+    opacity: 1;
+}
+
+
+
 
 .card{
     position: absolute;
     scale: 0.8;
     right: -30px;
-    top: 20px;
+    top: -60px;
     height: 340px;
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
@@ -148,7 +226,7 @@ button.iniciar:hover{
     font-size: 26px;
     text-align: center;
     border-radius: 30px;
-    box-shadow: -10px 10px 10px 0.1px rgb(76, 190, 235);
+    box-shadow: -10px 10px 10px 0.1px var(--neon);
     animation-name: effectCard;
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
@@ -206,7 +284,7 @@ button.iniciar:hover{
     left: 50vw;
     bottom: 20px;
     transform: translate(-50%, 0%);
-    border: 1px solid black;
+    border: 1px solid --var(--black);
     display: flex;
     list-style-type: none;
     gap: 150px;
@@ -219,6 +297,8 @@ button.iniciar:hover{
     background-color: white;
     box-sizing: content-box;
     transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0px 0px 15px var(--neon);
+
 }
 
     .nav-fix ul:hover{
@@ -235,7 +315,7 @@ button.iniciar:hover{
         width: 50px;
     }
     90%{
-        width:500px;
+        width:530px;
     }
     100%{
         width: auto;
@@ -245,7 +325,7 @@ button.iniciar:hover{
 }
 
 #icon1{
-    border: 1px solid black;
+    border: 1px solid --var(--black);
     padding: 2px;
     border-radius: 50%;
     background-color: rgb(14, 14, 29);
@@ -253,7 +333,7 @@ button.iniciar:hover{
 }
 
 #icon2{
-    border: 1px solid black;
+    border: 1px solid var(--black);
     padding: 2px;
     border-radius: 50%;
     background-color: rgb(14, 14, 29);
@@ -261,7 +341,7 @@ button.iniciar:hover{
 }
 
 #icon3{
-    border: 1px solid black;
+    border: 1px solid var(--black);
     padding: 2px;
     border-radius: 50%;
     background-color: rgb(14, 14, 29);
@@ -271,7 +351,7 @@ button.iniciar:hover{
 
 .nav-fix ul a{
     text-decoration: none;
-    color: black;
+    color: var(--black);
     opacity: 0;
     pointer-events: none;
     transition: 0.7s;
@@ -349,12 +429,11 @@ button.iniciar:hover{
 
 .longs .long1{
     top: 30px;
-    left: 364px;
+    left: 415px;
     position: absolute;
     padding: 10px;
     width: 80px;
     z-index: 1;
-    display: block;
     transition: 0.3s;
     overflow: hidden;
     /* border: 1px solid black; */
@@ -366,6 +445,7 @@ button.iniciar:hover{
     animation-timing-function: ease;
     animation-iteration-count: 1;
     padding-top: 40px;
+    border-bottom: 2px solid var(--neon);
 }
 
 
@@ -377,18 +457,20 @@ button.iniciar:hover{
 .longs .long2{
     transition: 0.3s;
     top: 27px;
-    left: 520px;
+    left: 589px;
     position: absolute;
     padding: 10px;
     width: 101px;
     z-index: 1;
     display: none;
-    background-image: linear-gradient(to top, white 65%, transparent);
+    background-image: linear-gradient(to top, white 75%, transparent);
     animation-name: in;
     animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-iteration-count: 1;
     padding-top: 40px;
+    border-bottom: 2px solid var(--neon);
+
 }
 
 .longs .long2 ul{
@@ -407,21 +489,23 @@ button.iniciar:hover{
 .longs .long3{
     top: 40px;
     transition: 0.3s;
-    left:660px;
+    left:760px;
     position: absolute;
     padding: 10px;
     width: 110px;
     z-index: 1;
     display: none;
-    background-image: linear-gradient(to top, white 65%, transparent);
+    background-image: linear-gradient(to top, white 75%, transparent);
     animation-name: in;
     animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-iteration-count: 1;
     padding-top: 40px;
+    border-bottom: 2px solid var(--neon);
+
 }
 .longs .long4{
-    left: 835px;
+    left: 950px;
     top: 30px;
     position: absolute;
     transition: 0.3s;
@@ -429,28 +513,32 @@ button.iniciar:hover{
     width: 80px;
     z-index: 1;
     display: none;
-    background-image: linear-gradient(to top, white 65%, transparent);
+    background-image: linear-gradient(to top, white 75%, transparent);
     animation-name: in;
     animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-iteration-count: 1;
     padding-top: 40px;
+    border-bottom: 2px solid var(--neon);
+
 }
 .longs .long5{
     top: 30px;
     transition: 0.3s;
-    left: 990px;
+    left: 1130px;
     position: absolute;
     padding: 10px;
     width: 80px;
     z-index: 1;
     display: none;
-    background-image: linear-gradient(to top, white 65%, transparent);
+    background-image: linear-gradient(to top, white 75%, transparent);
     animation-name: in;
     animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-iteration-count: 1;
     padding-top: 40px;
+    border-bottom: 2px solid var(--neon);
+
 }
 
 .longs a{
@@ -458,17 +546,18 @@ button.iniciar:hover{
     margin: 3px;
     margin-bottom: 7px;
     text-decoration: none;
-    color: black;
+    color: var(--black);
 }
 
 .longs a:hover{
     text-decoration: underline;
 }
 
+/* 
 .login{
     position: fixed;
-    background-color: rgb(6, 6, 14);
-    color: white;
+    background-color: rgb(209, 207, 207);
+    color: var(--black);
     left: 50vw;
     top: 50vh;
     width: 300px;
@@ -481,6 +570,7 @@ button.iniciar:hover{
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
     animation-iteration-count: 1;
+    border: 2px solid var(--neon);
 }
 
 @keyframes inLogin{
@@ -507,10 +597,10 @@ button.iniciar:hover{
     letter-spacing: 1px;
     outline: none;
     border: none;
-    border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid var(--black);
     margin-bottom: 20px;
     background: transparent;
-    color: white;
+    color: var(--black);
 }
 
 .login button{
@@ -520,13 +610,15 @@ button.iniciar:hover{
     left: 103px;
     border: none;
     transition: 0.3s;
+    background-color: var(--cortema);
+    color: white;
 }
 
 .login button:hover{
     scale: 120%;
-    background-color: rgb(37, 184, 152);
+    background-color: var(--neon);
     border-radius: 20px;
-
+    color: var(--black);
 }
 
 .login label{
@@ -534,7 +626,7 @@ button.iniciar:hover{
     left: 35px;
     margin-top: 4px;
     transition: 0.4s;
-    color: white;
+    color: var(--black);
     pointer-events: none;
 }
 
@@ -578,6 +670,25 @@ button.iniciar:hover{
     cursor: pointer;
 }
 
+
+.login-btn{
+    top: 50%;
+    position: relative;
+    width: 290px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--cortema);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.login-btn:hover{
+    background-color: rgb(14, 14, 29);
+    color: white;
+    scale: 110%;
+} */
 
 
 video{
