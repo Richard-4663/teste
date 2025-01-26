@@ -158,15 +158,25 @@ nav p{
 button.iniciar{
     position: relative;
     left: 100px;
-    width: 200px;
-    height: 40px;
+    width: 220px;
+    height: 43px;
     border-radius: 20px;
     border: none;
-    background-color: rgb(104, 104, 104);
+    background-color: rgb(99, 80, 204);
     color: white;
     cursor: pointer;
     transition: 0.4s;
     overflow: hidden;
+    margin-right: 60px;
+}
+
+button.iniciar#buttonTwo{
+    background-color: rgb(104, 104, 104);
+    width: 200px;
+    height: 40px;
+}
+button.iniciar#buttonTwo:hover{
+    background-color: var(--neon);
 }
 
 button.iniciar::before{
